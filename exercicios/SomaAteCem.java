@@ -1,3 +1,4 @@
+// Escreva um programa que calcule a soma de todos os números de 1 a 100
 package exercicios;
 
 public class SomaAteCem {
