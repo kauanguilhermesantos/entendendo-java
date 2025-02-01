@@ -6,8 +6,6 @@
 
 </div>
 
-
-
 ## Hello World
 
 A linguagem de programação Java é baseada em classes. Na qual, a partir das classes, pode-se criar objetos (instâncias das classes).
@@ -51,3 +49,67 @@ O nome de um método junto com a lista de parâmetros é chamado de ```Assinatur
 ![Cabeçalho e Assinatura](./img/cabecalho.png)
 
 Após declaração corretamente o cabeçalho, temos o bloco de comando ```System.out.println("Hello, World!");``` que imprime "Hello, World!".
+
+## Construtor de Classe
+
+O construtor de classe é um bloco declarado com o mesmo nome que a classe. É como uma rotina de inicialização que é chamado sempre que um objeto é criado.
+
+    Um construtor não é um método, só é chamado na construção de um objeto e não tem retorno.
+
+```java
+    public class Livro{
+        String nome;
+        String descricao;
+        String isbn;
+        double valor;
+
+        public Livro(){ // Construtor da classe Livro
+
+        }
+
+        // métodos da classe
+    }
+```
+
+Toda vez que há um ```new```, invoca-se o construtor.
+
+```java
+    Livro livro1 = new Livro(); // Chamando o construtor da classe Livro
+```
+
+Quando um construtor não é declarado na classe, o Java cria o ```construtor Default```, sem argumento e com corpo vazio.
+Quando se declara um construtor, o ```construtor Default``` não é criado.
+
+Um construtor pode receber argumentos, inicializando um com algum tipo de informação.
+
+```java
+    public class Livro{
+        String nome;
+        String descricao;
+        String isbn;
+        double valor;
+
+        public Livro(double valor){ // Construtor da classe Livro
+            this.valor = valor;
+        }
+
+        // métodos da classe
+    }
+```
+
+Assim, ao ser invocado, o construtor dessa classe precisa de um parâmetro para ser inicializado.
+
+```java
+    public class Cadastro{
+        public static void main(String[] args){
+            Livro livro1 = new Livro(1.0); // Chamando o construtor da classe Livro
+
+            livro1.nome = "Olha o Livro 1 ai!";
+            livro1.descricao = "Um livro ai pra tu ver";
+            livro1.isbn = "100-200-3000";
+            livro1.valor = 199.90;
+
+            // ...
+        }
+    }
+```
